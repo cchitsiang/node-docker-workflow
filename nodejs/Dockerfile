@@ -1,13 +1,13 @@
 FROM node:latest
 
-RUN mkdir /src
+RUN mkdir /app
 
 RUN npm install nodemon -g
 
-WORKDIR /src
-ADD . /src
+WORKDIR /app
+ADD . /app
 RUN npm install
 
 EXPOSE 3000
 
-CMD npm start
+CMD ["npm", "start"]

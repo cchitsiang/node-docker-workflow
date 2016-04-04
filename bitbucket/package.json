@@ -1,0 +1,12 @@
+{
+  "name": "bitbucket-webhook-docker",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "mocha": "^2.3.3"
+  }
+}

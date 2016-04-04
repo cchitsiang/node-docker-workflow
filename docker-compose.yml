@@ -1,12 +1,20 @@
 web:
-  build: ./app
-  volumes:
-    - "./app:/src/app"
+  build: ./nodejs
+  command: ["bash","-c", "npm install; nodemon ./bin/www"]
+  #volumes:
+  #  - "./app:/src"
+  volumes_from:
+    - bitbucket
   ports:
     - "80:3000"
   links:
+   - bitbucket
    - redis
 redis:
     image: redis:latest
     ports:
         - "6379:6379"
+bitbucket:
+    build: ./bitbucket
+    ports:
+        - "3000:3000"
